@@ -12,5 +12,5 @@ export const create = (file) => {
 }
 
 export const update = (id, patch) => db.get('files').find({id}).assign(patch).write();
-export const list = () => db.get('files');
+export const list = () => db.get('files').map(({id, status, originalname, rowCount}) => ({id, originalname, status, rowCount}));
 export const get = (id) => db.get('files').find({id});
