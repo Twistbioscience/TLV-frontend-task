@@ -18,7 +18,7 @@ The test should take ~3-4 hours
 
 ### Requirements
 
-- Users should be able to upload new files
+- Users should be able to upload new files (1 at a time)
 - Users should be able to list uploaded files
 - Users should be able to view a single file
 
@@ -33,13 +33,17 @@ The test should take ~3-4 hours
 3. `yarn install` or `npm install`
 4. `yarn start` or `npm start`
 
-### Other points
+### Server info
 
 - The server part of the task is only for API design, no need to handle errors, improve performance or whatever, just provide the API layer.
+- Uploaded files will be accessable in an array in `req.files` for all POST requests
 - The performance issues were introduced on purpose - it was to simulate the fact that actual parsing of DNA files might take a long time
 - There is no need make any changes to any files other than the API layer in `server/main.js`
 - All methods required are already imported to `server/main.js`
 - The default port for the server is `3000` you may set another port by setting the env var PORT ex. `PORT=4000 yarn start`
 - To clear db delete `mockdb.json` and `upload/`
+
+### Other points
+- Have fun!
 - For any questions/issues - please contact me at ayahid@twistbioscience.com
 
