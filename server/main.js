@@ -25,13 +25,4 @@ app.post('*', upload.any(), (req, res, next) => {
 })
 app.use('/uploads', express.static('uploads'));
 
-app.get('/files', (req, res) => res.send(list()))
-
-app.post('/files', (req, res) => {
-  parseFile(req.files[0]);
-  res.send(req.files[0].filename);
-})
-
-app.get('/files/:id', (req, res) => res.send(get(req.params.id)));
-
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
